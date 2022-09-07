@@ -1,0 +1,18 @@
+<div class="col-12 col-md-6 col-lg-4 product"  *ngFor="let product of products">
+    <div class="card">
+      <img class="card-img-top" src="{{product.imageUrl}}" alt="Card image cap">
+        <div class="card-body">
+      <h4 class="card-title show_txt"><a routerLink="/products/{{product.id}}" title="View Product">{{product.productName}}</a></h4>
+      <p class="card-text show_txt">{{product.category.categoryName}} / {{product.brand.brandName}}</p>
+      <div class="row price-add-to-card">
+        <div class="col price">
+          <p class="btn btn-danger btn-block">{{product.price | currency: 'VND'}}</p>
+        </div>
+        <div class="col add-to-card" style=" text-align: center">
+          <button class="btn btn-success" routerLink="/products/{{product.id}}" >Thêm vào giỏ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
